@@ -6,11 +6,30 @@
       background: #333;
     }
 
+    g.arc {
+      cursor: pointer;
+    }
+
+    g.arc:hover text {
+      fill: white;
+    }
+
+    g.arc:hover path {
+      stroke: white;
+    }
+
     .roads path,
     .roads line {
       fill: none;
       stroke: #555;
-      stroke-width: 5px;
+      stroke-width: 3px;
+    }
+
+    text {
+      fill: #888;
+      font-family: Monoid;
+      font-size: 10px;
+      -webkit-font-aliasing: antialiased;
     }
   </style>
 </head>
