@@ -78,10 +78,13 @@ function RoadLabel({ i }) {
   const a = (Math.PI / 6) * i - Math.PI / 2;
   const x1 = x + Math.cos(a) * 520 - 12;
   const y1 = y + Math.sin(a) * 520;
-  const [hour, minute] = i.toString().split('.').map(x => Number(x))
+  const [hour, minute] = i
+    .toString()
+    .split(".")
+    .map(x => Number(x));
   return (
     <text x={x1} y={y1} anchor="middle">
-      {hour}:{(60*minute || "0000").toString().slice(0,2)}
+      {hour}:{(60 * minute || "0000").toString().slice(0, 2)}
     </text>
   );
 }
@@ -125,6 +128,8 @@ function BlackRockCity() {
       <Line index={9} />
       <Line index={10} /> */}
 
+      <circle cx={x} cy={y} r={12} fill="none" stroke="#666" />
+
       <g className="roads">
         {ROADS.map((road, index) => (
           <Arc key={road} road={road} r={radius - index * 25} />
@@ -132,15 +137,17 @@ function BlackRockCity() {
         {roads.map(road => {
           return <Road index={road.i} start={road.start} end={road.end} />;
         })}
-        {roadLabels.map(i =>
-          <RoadLabel key={`roadlabel${i}`} i={i} />;
-        )}
+        {roadLabels.map(i => (
+          <RoadLabel key={`roadlabel${i}`} i={i} />
+        ))}
         {/* <Road index={2} start={200} end={500} />
         <Road index={2.25} start={375} end={500} />
         <Road index={2.5} start={200} end={500} />
         <Road index={2.75} start={375} end={500} />
         <Road index={3} start={200} end={500} />
         <Road index={3.5} start={200} end={500} /> */}
+        <circle cx={x} cy={y + 225} r={56} fill="#333333" />
+        <Arc road={ROADS[11]} r={radius - 11 * 25} />
       </g>
     </svg>
   );
