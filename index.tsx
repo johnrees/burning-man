@@ -67,7 +67,10 @@ function Arc({ r, road }) {
   return (
     <g className="arc">
       <text x={x2} y={y2}>
-        {road}
+        {road[0]}
+      </text>
+      <text x={x2 + 8} y={y2}>
+        {road.slice(1)}
       </text>
       <path d={`M ${x1} ${y1} A ${r} ${r} 0 1 1 ${x2} ${y2}`} />
     </g>
@@ -76,15 +79,16 @@ function Arc({ r, road }) {
 
 function RoadLabel({ i }) {
   const a = (Math.PI / 6) * i - Math.PI / 2;
-  const x1 = x + Math.cos(a) * 520 - 12;
-  const y1 = y + Math.sin(a) * 520;
+  const dist = radius + 20;
+  const x1 = x + Math.cos(a) * dist - 12;
+  const y1 = y + Math.sin(a) * dist;
   const [hour, minute] = i
     .toString()
     .split(".")
     .map(x => Number(x));
   return (
     <text x={x1} y={y1} anchor="middle">
-      {hour}:{(60 * minute || "0000").toString().slice(0, 2)}
+      {hour}:{(60 * minute || "00").toString().slice(0, 2)}
     </text>
   );
 }

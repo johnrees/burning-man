@@ -11,7 +11,12 @@
     }
 
     g.arc:hover text {
+      opacity: 1;
       fill: white;
+    }
+
+    .arc:hover text:first-child {
+      fill: yellow;
     }
 
     g.arc:hover path {
@@ -26,8 +31,18 @@
     .roads path,
     .roads line,
     .roads circle {
+      transition: stroke 0.02s;
       stroke: #555;
       stroke-width: 3px;
+    }
+
+    .arc text {
+      opacity: 0.5;
+    }
+
+    .arc text:first-child {
+      opacity: 1;
+      fill: #aaa;
     }
 
     text {
