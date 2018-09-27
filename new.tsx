@@ -98,6 +98,8 @@ function App() {
           <Arc startIndex={2} endIndex={10} distance={5650} />
 
           <Arc startIndex={2} endIndex={10} distance={5700} />
+
+          <Arc startIndex={10} endIndex={4} distance={6600} />
         </g>
       </g>
     </svg>
