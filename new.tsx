@@ -43,7 +43,6 @@ function App() {
           })}
 
           <circle cx={0} cy={-2600} r={600} />
-          <circle cx={0} cy={2600} r={800} />
 
           {Array.from(Array(24), (_, x) => x / 2).map(hour => (
             <Line index={hour} start={400} end={7800} />
@@ -51,15 +50,54 @@ function App() {
         </g>
 
         <g className="black">
+          <circle cx={0} cy={3050} r={800} />
+          <circle cx={0} cy={3050} r={300} />
+
           <line x1={-2500} y1={0} x2={2500} y2={0} />
           <line x1={0} y1={-2600} x2={0} y2={0} />
 
-          <Line index={2} start={2500} end={5600} />
-          <Line index={10} start={2500} end={5600} />
+          <Line index={2} start={2500} end={5700} />
+          <Line index={10} start={2500} end={5700} />
           {/* <Line index={5.5} start={(2500)} end={(3000)} /> */}
           {/* <Line index={6.5} start={(2500)} end={(3000)} /> */}
+
           <Arc startIndex={2} endIndex={10} distance={2500} />
-          <Arc startIndex={2} endIndex={10} distance={5600} />
+          <Arc startIndex={2} endIndex={10} distance={2900} />
+
+          <Arc startIndex={2} endIndex={10} distance={2950} />
+          <Arc startIndex={2} endIndex={10} distance={3150} />
+
+          <Arc startIndex={2} endIndex={10} distance={3200} />
+          <Arc startIndex={2} endIndex={10} distance={3400} />
+
+          <Arc startIndex={2} endIndex={10} distance={3450} />
+          <Arc startIndex={2} endIndex={10} distance={3650} />
+
+          <Arc startIndex={2} endIndex={10} distance={3700} />
+          <Arc startIndex={2} endIndex={10} distance={3900} />
+
+          <Arc startIndex={2} endIndex={10} distance={3950} />
+          <Arc startIndex={2} endIndex={10} distance={4150} />
+
+          <Arc startIndex={2} endIndex={10} distance={4200} />
+          <Arc startIndex={2} endIndex={10} distance={4400} />
+
+          <Arc startIndex={2} endIndex={10} distance={4450} />
+          <Arc startIndex={2} endIndex={10} distance={4650} />
+
+          <Arc startIndex={2} endIndex={10} distance={4700} />
+          <Arc startIndex={2} endIndex={10} distance={4900} />
+
+          <Arc startIndex={2} endIndex={10} distance={4950} />
+          <Arc startIndex={2} endIndex={10} distance={5150} />
+
+          <Arc startIndex={2} endIndex={10} distance={5200} />
+          <Arc startIndex={2} endIndex={10} distance={5400} />
+
+          <Arc startIndex={2} endIndex={10} distance={5450} />
+          <Arc startIndex={2} endIndex={10} distance={5650} />
+
+          <Arc startIndex={2} endIndex={10} distance={5700} />
         </g>
       </g>
     </svg>
