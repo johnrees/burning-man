@@ -30,35 +30,36 @@ function Line({ index, start, end }) {
 }
 
 function App() {
-  const width = scale(42 * 200 * 2);
+  const scale = 1 / 14;
+  const width = 42 * 200 * 2 * scale;
   const height = width;
   return (
     <svg width={width} height={height}>
-      <g transform={`translate(${width / 2},${height / 2})`}>
+      <g transform={`translate(${width / 2},${height / 2}), scale(${scale})`}>
         <g className="rings">
           {Array.from(Array(40), (_, x) => (x + 2) * 200).map(radius => {
             console.log(radius);
-            return <circle key={radius} cx={0} cy={0} r={scale(radius)} />;
+            return <circle key={radius} cx={0} cy={0} r={radius} />;
           })}
 
-          <circle cx={0} cy={scale(-2600)} r={scale(600)} />
-          <circle cx={0} cy={scale(2600)} r={scale(800)} />
+          <circle cx={0} cy={-2600} r={600} />
+          <circle cx={0} cy={2600} r={800} />
 
           {Array.from(Array(24), (_, x) => x / 2).map(hour => (
-            <Line index={hour} start={scale(400)} end={scale(7800)} />
+            <Line index={hour} start={400} end={7800} />
           ))}
         </g>
 
         <g className="black">
-          <line x1={scale(-2500)} y1={0} x2={scale(2500)} y2={0} />
-          <line x1={0} y1={scale(-2600)} x2={0} y2={0} />
+          <line x1={-2500} y1={0} x2={2500} y2={0} />
+          <line x1={0} y1={-2600} x2={0} y2={0} />
 
-          <Line index={2} start={scale(2500)} end={scale(5600)} />
-          <Line index={10} start={scale(2500)} end={scale(5600)} />
-          {/* <Line index={5.5} start={scale(2500)} end={scale(3000)} /> */}
-          {/* <Line index={6.5} start={scale(2500)} end={scale(3000)} /> */}
-          <Arc startIndex={2} endIndex={10} distance={scale(2500)} />
-          <Arc startIndex={2} endIndex={10} distance={scale(5600)} />
+          <Line index={2} start={2500} end={5600} />
+          <Line index={10} start={2500} end={5600} />
+          {/* <Line index={5.5} start={(2500)} end={(3000)} /> */}
+          {/* <Line index={6.5} start={(2500)} end={(3000)} /> */}
+          <Arc startIndex={2} endIndex={10} distance={2500} />
+          <Arc startIndex={2} endIndex={10} distance={5600} />
         </g>
       </g>
     </svg>

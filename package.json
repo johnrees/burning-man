@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx parcel index.html",
-    "build": "rm -rf dist && parcel build index.html --public-url .",
+    "build": "rm -rf dist && parcel build index.html --public-url . && parcel build new.html --public-url .",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
   },
